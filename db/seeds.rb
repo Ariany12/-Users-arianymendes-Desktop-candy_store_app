@@ -13,7 +13,8 @@
 # products = Product.new({name: "amendoim", price: 2, flavor: "sweet", image: "none"})
 # products.save 
 
-# 10.times do 
-#   {
-#     products = Product.new({name: Faker::Food.fruits, price: Faker::Number.within(range: 1..10), flavor: Faker::Food.spice, image: "none"})
-#   }
+10.times do
+products = Product.new(name: Faker::Food.fruits, price: Faker::Number.within(range: 1..10), flavor: Faker::Food.spice, image: "none")
+products.save
+
+end

@@ -1,0 +1,11 @@
+{message: "hello"}
+
+
+# @products.map do |product|
+#   {
+#   name:products.name,
+#   name:products.price,
+#   name:products.flavor,
+#   name:products.image,
+# }
+  
