@@ -11,6 +11,10 @@ Rails.application.routes.draw do
     get "/products_query" => "products#query"
 
     get "/products_urlsegparameter/:flavor" => "products#segment"
+
+    get "/products_newquery" => "products#new_query"
+
+    post "/body_parameter" => "products#body_parameter"
   
   end
 end

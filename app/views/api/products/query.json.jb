@@ -1,4 +1,14 @@
 {"the flavor chose is" => @flavor,
 "and the price is" => @price}
 
+# @product.map do |products|
+#   {
+#     id:products.id,
+#     name:products.name,
+#     price:products.price,
+#     flavor:products.flavor,
+#     image:products.image
+#   }
+    
+#   end
 #{“the name of the user is” => @user_name}
