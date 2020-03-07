@@ -8,8 +8,12 @@
 
 # products = Product.new({name: "jujuba", price: 2, flavor: "sweet", image: "none"}) 
 # products.save 
-# products = Product.new({name: "bala_bombom", price: 2, flavor: "sweet", image: "none"})
-# products.save 
+
+
+#Product.create!({name: "bala_bombom", price: 2, flavor: "sweet", image: "none"})
+#========= (create! give me an error when it doesn't save)
+#Product.create({name: "bala_bombom", price: 2, flavor: "sweet", image: "none"})
+#============
 # products = Product.new({name: "amendoim", price: 2, flavor: "sweet", image: "none"})
 # products.save 
 

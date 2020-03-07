@@ -1,0 +1,4 @@
+{"the flavor chose is" => @flavor,
+"and the price is" => @price}
+
+#{“the name of the user is” => @user_name}

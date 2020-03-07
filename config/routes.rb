@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   # end
   namespace :api do
     get "/products" => "products#index"
+
+    get "/products_1" => "products#query"
   
   end
 end
