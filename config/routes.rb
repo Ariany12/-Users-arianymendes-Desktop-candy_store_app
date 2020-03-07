@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   namespace :api do
     get "/products" => "products#index"
 
-    get "/products_1" => "products#query"
+    get "/products_query" => "products#query"
+
+    get "/products_urlsegparameter/:flavor" => "products#segment"
   
   end
 end

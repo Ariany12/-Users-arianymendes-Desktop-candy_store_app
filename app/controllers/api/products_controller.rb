@@ -13,4 +13,10 @@ def index
     @price = params["price"]
     render "query.json.jb"
   end
+
+  def segment 
+    p "AZUL E A COR MAIS FORTE"
+    @flavor = params["flavor"]
+    render "segment.json.jb"
+  end
 end 
