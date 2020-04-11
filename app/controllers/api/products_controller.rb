@@ -1,36 +1,48 @@
 class Api::ProductsController < ApplicationController
-
-def index
-  @products = Product.all
-  render "index.json.jb"
+  def index
+    @products = Product.all
+    render "index.json.jb"
   end
 
-  def query
-    p "here are the parameters"
-    @flavor=  params["flavor"]
-    @flavor =  @flavor.upcase
-    p @flavor
-    @price = params["price"]
-    #@id = params["id"]
-    #@product = Product.find_by(id: params["id"])
-    #p @product
-    render "query.json.jb"
+  def show
+    @product = Product.find_by(id: params[:id])
+    render "show.json.jb"
   end
 
-  def new_query
-  @product = Product.find_by(id: params["id"])
-  p @product
-  render "new_query.json.jb"
+  def create
+    @product = Product.new(
+      name: params[:name],
+      price: params[:price],
+      flavor: params[:flavor],
+      image_url: params[:image_url]
+    )
+    if @product.save
+      render json: {message: "you create a new product in your db"}
+    else 
+      render json: {errors: @product.errors.full_messages}
+    end
   end
 
-  def segment 
-    p "AZUL E A COR MAIS FORTE"
-    @flavor = params["flavor"]
-    render "segment.json.jb"
+  def update
+    @product = Product.find_by(id: params[:id])
+    @product.name = params[:name] || @product.name
+    @product.price = params[:price] || @product.price
+    @product.flavor = params[:flavor] || @product.flavor
+    @product.image_url = params[:image_url] || @product.image_url
+
+    if @product.save
+      render json: {message: "your product was update"}
+    else 
+      render json: {errors: @product.errors.full_messages}
+    end
   end
 
-  def body_parameter
-    @first_name = params["name"]
-    render "body_parameter.json.jb"
+  def destroy
+    @product = Product.find_by(id: params[:id])
+    if @product.destroy
+      render json: {message: "your product was delete"}
+    else 
+      render json: {errors: @product.errors.full_messages}
+    end
   end
 end 
