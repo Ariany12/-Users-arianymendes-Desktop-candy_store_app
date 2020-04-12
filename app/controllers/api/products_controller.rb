@@ -19,7 +19,7 @@ class Api::ProductsController < ApplicationController
     if @product.save
       render json: {message: "you create a new product in your db"}
     else 
-      render json: {errors: @product.errors.full_messages}
+      render json: {errors: @product.errors.full_messages}, status: :unprocessable_entity
     end
   end
 
